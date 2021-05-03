@@ -1,0 +1,23 @@
+<%= form_with(model: item) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+        <% item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="uk-grid">
+    <div class="uk-width-1-2">
+      <%= form.text_field :name, class: 'uk-input', placeholder: 'Tomaten, bloem, etc', autofocus: 'autofocus' %>
+    </div>
+
+    <div class="uk-width-1-2">
+      <%= form.submit 'Voeg toe', class: 'uk-button uk-button-primary' %>
+    </div>
+  </div>
+<% end %>

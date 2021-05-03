@@ -1,0 +1,20 @@
+<turbo-frame id="<%= dom_id(@item, 'turbo') %>" class="uk-width-1-1">
+  <%= form_with(model: @item) do |form| %>
+    <div uk-grid>
+      <div class="table-icon handle"><span uk-icon="table"></span></div>
+      <div class="uk-width-expand">
+        <%= form.text_field :name, value: @item.name, class: 'uk-input', placeholder: 'Tomaten, bloem, etc', autofocus: 'autofocus' %>
+      </div>
+      <div class="table-icon">
+        <%= button_tag(type: 'submit', class: "uk-button uk-button-text") do %>
+          <span uk-icon="check"></span> 
+        <% end %>
+      </div>
+      <div class="table-icon">
+        <%= link_to items_path, class: "uk-button uk-button-text" do %>
+          <span uk-icon="close"></span> 
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</turbo-frame>

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  checked_off: false
+  position: 1
+  timestamps: MyString
+
+two:
+  name: MyString
+  checked_off: false
+  position: 1
+  timestamps: MyString

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GroceriesOnRails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="uk-section-secondary uk-preserve-color">
+        <nav class="color-grey uk-light">
+          <div class="uk-container uk-container-small">
+            <div>
+              <ul class="uk-navbar-nav">
+                <li class="uk-active">
+                  <%= link_to root_url do %>
+                    <span uk-icon="icon: cart; ratio: 1.5">
+                    <% end %>
+                </li>
+                <li class="uk-active">
+                  <%= link_to :Boodschappen, root_url %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="uk-section uk-section-default">
+        <div class="uk-container uk-container-xsmall">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

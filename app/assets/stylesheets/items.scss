@@ -1,0 +1,15 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.handle {
+    cursor: move;
+    cursor: -webkit-grabbing;
+}
+
+.table-icon {
+    width: 2em;
+}
+
+.table-icon > a:hover {
+    background-color: inherit; 
+}
