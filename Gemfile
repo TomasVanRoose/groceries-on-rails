@@ -44,6 +44,10 @@ group :development do
   gem 'spring'
 
   gem "capistrano", "~> 3.16", require: false
+  gem "capistrano-rails", "~> 1.6"
+  gem "capistrano-passenger", "~> 0.2.1"
+  gem "capistrano-yarn", "~> 2.0"
+  gem "capistrano-rbenv", "~> 2.2"
 
 end
 
@@ -61,3 +65,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "acts_as_list", "~> 1.0"
 
 gem "turbo-rails", "~> 0.5.9"
+
