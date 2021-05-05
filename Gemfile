@@ -7,6 +7,7 @@ ruby '3.0.0'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -46,11 +47,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem "capistrano", "~> 3.16", require: false
-  gem "capistrano-rails", "~> 1.6"
-  gem "capistrano-passenger", "~> 0.2.1"
-  gem "capistrano-yarn", "~> 2.0"
-  gem "capistrano-rbenv", "~> 2.2"
+  gem "capistrano", "~> 3.16",            require: false
+  gem "capistrano-rails", "~> 1.6",       require: false
+  gem "capistrano-passenger", "~> 0.2.1", require: false
+  gem "capistrano-yarn", "~> 2.0",        require: false
+  gem "capistrano-rbenv", "~> 2.2",       require: false
+  gem "capistrano3-puma",                 require: false
 
 end
 
