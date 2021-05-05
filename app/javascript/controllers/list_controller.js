@@ -9,7 +9,6 @@ export default class extends Controller {
       handle: ".handle",
       onEnd: this.end.bind(this)
     })
-    this.selectItem.bind(this)
   }
 
   end(event) {

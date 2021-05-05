@@ -1,6 +1,9 @@
+<div class="">
 <%= render 'form', item: @item %>
+</div>
+<br>
 
-<div class="uk-margin"
+<div class="uk-margin uk-grid-small"
      data-controller="list" 
      data-list-move-url="/items/:id/move", 
      data-list-check-url="/items/:id/check"
@@ -11,29 +14,29 @@
                  class="uk-width-1-1"
                  data-id="<%= item.id %>"
                  data-checked="<%= item.checked_off %>">
-                 <div uk-grid>
-                   <div class="table-icon handle"><span uk-icon="table"></span></div>
-                   <% if !item.checked_off %>
-                     <%= link_to check_item_path(item), class: "uk-link-reset uk-width-expand", method: :put do %>
-                       <%= item.name %>
-                     <% end %>
-                   <% else %>
-                     <%= link_to uncheck_item_path(item), class: "uk-link-reset uk-width-expand", method: :put do %>
-                       <s class="uk-text-muted"><%= item.name %></s>
-                     <% end %>
-                   <% end %>
-                   <div class="table-icon">
-                     <%= link_to edit_item_path(item) do %>
-                       <span class="uk-text-primary" uk-icon="pencil"></span>
-                     <% end %>
-                   </div>
-                   <div class="table-icon">
-                     <%= link_to item, method: :delete do %>
-                       <span class="uk-text-danger" uk-icon="trash"></span>
-                     <% end %>
-                   </div>
-                 </div>
+      <div uk-grid>
+        <div class="table-icon handle"><span uk-icon="table"></span></div>
+        <% if !item.checked_off %>
+          <%= link_to check_item_path(item), class: "uk-link-reset uk-width-expand", method: :put do %>
+            <%= item.name %>
+          <% end %>
+        <% else %>
+          <%= link_to uncheck_item_path(item), class: "uk-link-reset uk-width-expand", method: :put do %>
+            <s class="uk-text-muted"><%= item.name %></s>
+          <% end %>
+        <% end %>
+        <div class="table-icon">
+          <%= link_to edit_item_path(item) do %>
+            <span class="uk-text-primary" uk-icon="pencil"></span>
+          <% end %>
+        </div>
+        <div class="table-icon">
+          <%= link_to item, method: :delete do %>
+            <span class="uk-text-danger" uk-icon="trash"></span>
+          <% end %>
+        </div>
+      </div>
+      <hr>
     </turbo-frame>
   <% end %>
-
 </div>
