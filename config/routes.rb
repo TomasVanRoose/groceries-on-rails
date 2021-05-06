@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :items do
+  resources :items, only: [:index, :edit, :create, :update, :destroy] do
     member do
       patch :move
       put :check
