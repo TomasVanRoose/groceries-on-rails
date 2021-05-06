@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
+    Item.where(checked_off: true, updated_at: ..2.hours.ago).destroy_all
     @items = Item.all
     @item = Item.new
   end
