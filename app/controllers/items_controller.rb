@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[ update destroy move check uncheck ]
+  before_action :set_item, only: %i[ edit update destroy move check uncheck ]
 
   # GET /items or /items.json
   def index
+    # Remove items that are checked off and older than 2 hours
     Item.where(checked_off: true, updated_at: ..2.hours.ago).destroy_all
     @items = Item.all
     @item = Item.new
@@ -51,12 +52,17 @@ class ItemsController < ApplicationController
   end
 
   def check
+    # Move the checked off item to the bottom
+    @item.move_to_bottom
     @item.checked_off = true
     @item.save
     redirect_to items_url
   end
   
   def uncheck
+    # Move the checked off item to the top of the unchecked ones
+    last_unchecked_pos = Item.where(checked_off: false).maximum(:position)
+    @item.insert_at(last_unchecked_pos + 1)
     @item.checked_off = false
     @item.save
     redirect_to items_url
